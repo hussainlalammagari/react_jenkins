@@ -4,12 +4,17 @@ pipeline {
     tools {nodejs "node"}
     
     stages {
-        stage('Build') {
+        stage('install') {
             steps {
                 bat 'npm install'
                 
             }
         }
-        
+         stage('Build') {
+            steps {
+                bat 'npm run build'
+                
+            }
+        }
     }
 }
